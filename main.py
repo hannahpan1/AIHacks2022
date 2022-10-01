@@ -46,6 +46,11 @@ lr_test_r2 = r2_score(y_test, y_lr_test_pred)
 lr_results = pd.DataFrame(['Linear Regression', lr_train_mse, lr_train_r2, lr_test_mse, lr_test_r2]).transpose()
 lr_results.columns = ['Method', 'Training MSE', 'Training R2', 'Test MSE', 'Test R2']
 
+from tabulate import tabulate
+table = [['LR MSE (Train)', lr_train_mse], ['LR R2 (Train)', lr_train_r2],
+         ['LR MSE (Test)', lr_test_mse], ['LR R2 (Test)', lr_test_r2]]
+print(tabulate(table))
+
 # import matplotlib.pyplot as plt
 # # plt.plot([lr_test_mse], [lr_test_r2])
 # plt.plot([lr_test_mse])
@@ -54,7 +59,3 @@ lr_results.columns = ['Method', 'Training MSE', 'Training R2', 'Test MSE', 'Test
 # plt.ylabel('LR R2 (Test)')
 # plt.show()
 
-from tabulate import tabulate
-table = [['LR MSE (Train)', lr_train_mse], ['LR R2 (Train)', lr_train_r2],
-         ['LR MSE (Test)', lr_test_mse], ['LR R2 (Test)', lr_test_r2]]
-print(tabulate(table))
