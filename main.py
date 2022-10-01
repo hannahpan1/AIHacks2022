@@ -1,5 +1,4 @@
 # Load Data
-
 import pandas as pd
 df = pd.read_csv('/Users/emmaho/Downloads/archive/allegations_202007271729.csv')
 df.head()
